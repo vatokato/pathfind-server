@@ -21,6 +21,8 @@ app.get('/', function(req, res) {
 
 app.post('/path', pathModel.getDistance);
 
-app.listen(3001, function() {
-  console.log('Path API started. http://localhost:3001');
+let port = process.env.npm_config_PORT || 3001;
+
+app.listen(port, function() {
+  console.log('Path API started. http://localhost:'+port);
 });
